@@ -1,0 +1,39 @@
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    min-width: 300px;
+    max-width: 700px;
+    text-align: center;
+    display: grid;
+    grid-row-gap: 50px;
+    height: 40%;
+}
+
+.mat-input{
+    width: 70%;
+    margin: 10px;
+}
+
+.signup-button{
+    width: 45%;
+    margin-top: 80px;
+    bottom: 0;
+    background-color: #007DBA;
+    color: white;
+}
+
+.error-message{
+    color: #C8102E;
+}
+
+a{
+    color: #007DBA;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
