@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

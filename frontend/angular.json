@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Postee"
+    }
+  },
+  "defaultProject": "Postee",
+  "cli": {
+    "analytics": false
+  }
 }
