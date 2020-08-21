@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AuthService } from '../../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   showErrorMessage: boolean;
   signupForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AuthService) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.showErrorMessage = false;
@@ -28,8 +29,13 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  submit(): void{
-    this.auth.signup(this.signupForm.value);
+  submit(): void {
+    console.log('clicked')
+    this.auth.register(this.signupForm.value).subscribe((res) => {
+      this.router.navigate(['']);
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

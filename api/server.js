@@ -9,7 +9,7 @@ const routes = {
     auth: require('./routes/auth')
 }
 
-mongoose.connect(process.env['MongoDBUrl'], {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env['MongoDBUrl'], {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 // Middleware
 app.use(bodyParser.json());
@@ -20,6 +20,3 @@ app.listen(5000, () =>{
 });
 
 app.use('/auth', routes.auth);
-// app.use('/auth', authRateLimiter, routes.auth);
-// app.use('/u', authCheck, routes.user);
-// app.use('/', antiAuthCheck, routes.index);
