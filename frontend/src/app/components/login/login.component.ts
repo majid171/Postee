@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     const jsonField = JSON.parse(stringField);
 
     this.auth.login(jsonField).subscribe((res) =>{
+      console.log(res);
       this.router.navigate(['']);
     }, error =>{
       console.log(error)

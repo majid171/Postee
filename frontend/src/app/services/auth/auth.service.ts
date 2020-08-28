@@ -17,11 +17,10 @@ export class AuthService {
       'Content-type': 'application/json',
     });
 
-    console.log(form);
-
     return this.http.post<any>('http://localhost:5000/auth/login', form, {
       headers: headers,
       observe: 'response',
+      withCredentials: true
     });
   }
 
@@ -34,6 +33,7 @@ export class AuthService {
     return this.http.post<any>('http://localhost:5000/auth/register', form, {
       headers: headers,
       observe: 'response',
+      withCredentials: true
     });
   }
 }

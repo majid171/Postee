@@ -17,9 +17,8 @@ exports.loginUser = async (req, res, next) => {
         }
 
         res.cookie('token', generateJWT(foundUser._id), {
-            httpOnly: false,
-            secure: false,
-            sameSite: "none"
+            httpOnly: true,
+            secure: false
         });
         res.status(200).json(foundUser);
     } catch (error) {
@@ -51,9 +50,8 @@ exports.registerUser = async (req, res) => {
         }).save();
 
         res.cookie('token', generateJWT(newUser._id), {
-            httpOnly: false,
-            secure: false,
-            sameSite: "none"
+            httpOnly: true,
+            secure: false
         });
 
         res.status(200).json(newUser);
